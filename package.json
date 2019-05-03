@@ -1,0 +1,46 @@
+{
+  "name": "rhamb.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-webpack-plugin": "3.2.0",
+    "invariant": "2.2.4",
+    "ramda": "0.26.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "ui.rhamb.io": "git://github.com/kv9991/ui.rhamb.io.git#1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-class-properties": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-react": "^7.12.4",
+    "mini-css-extract-plugin": "0.6.0",
+    "prettier": "1.16.1",
+    "react-hot-loader": "4.8.4",
+    "uglifyjs-webpack-plugin": "2.1.2",
+    "webpack": "4.30.0",
+    "webpack-bundle-analyzer": "3.3.2",
+    "webpack-cli": "3.3.1",
+    "webpack-dev-server": "3.3.1"
+  }
+}
