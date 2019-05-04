@@ -3,7 +3,10 @@
 import React, { useEffect } from 'react';
 import { hot } from 'react-hot-loader';
 import { fontInjector } from 'ui.rhamb.io/src/business/font-injector';
-import { Button, theme, fonts, defaultTheme } from 'ui.rhamb.io';
+import { Switcher } from '~/domains/app/router/react/switcher';
+import { RouterProvider } from '~/domains/app/router/react/router-provider';
+import { routerService } from '~/domains/app/router';
+import { theme, fonts, defaultTheme } from 'ui.rhamb.io';
 
 const helveticaFonts = [
   new FontFace('Helvetica Neue', `url(${fonts.helveticaNeueLight})`, {
@@ -28,7 +31,23 @@ export const Root = () => {
         default: defaultTheme,
       }}
     >
-      <Button>11</Button>
+      <RouterProvider>
+        <Switcher />
+        <button
+          onClick={() => {
+            routerService.pushHistory('index');
+          }}
+        >
+          Home
+        </button>
+        <button
+          onClick={() => {
+            routerService.pushHistory('about');
+          }}
+        >
+          About
+        </button>
+      </RouterProvider>
     </theme.ThemeProvider>
   );
 };
