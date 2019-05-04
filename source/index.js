@@ -3,7 +3,7 @@
 import * as React from 'react';
 import invariant from 'invariant';
 import ReactDOM from 'react-dom';
-import Root from '~/root';
+import Root from '~/components/core/root';
 import { onDocumentReady } from '~/utils/on-document-ready';
 
 const init = () => {

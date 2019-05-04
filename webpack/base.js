@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { resolve } = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { sourceDir, buildDir, isAnalyzeEnabled } = require('./common');
 
@@ -27,12 +28,16 @@ const baseConfig = {
       },
       {
         test: /\.(js|jsx)?$/,
-        use: 'babel-loader',
-        exclude: [/(node_modules)/],
+        loader: 'babel-loader',
+        options: {
+          configFile: resolve('babel.config.js'),
+        },
+        include: [resolve('source'), resolve('node_modules/ui.rhamb.io')],
       },
       {
-        test: /\.(png | gif | jpg | woff | woff2)$/,
+        test: /\.(png|gif|jpg|woff|woff2)$/,
         loader: 'url-loader',
+        exclude: /node_modules\/(?!(ui.rhamb.io)\/).*/,
         options: {
           limit: 10000,
         },
@@ -40,6 +45,7 @@ const baseConfig = {
       {
         test: /\.svg$/,
         loader: 'url-loader',
+        exclude: /node_modules\/(?!(ui.rhamb.io)\/).*/,
         options: {
           limit: 8,
         },
@@ -47,6 +53,7 @@ const baseConfig = {
       {
         test: /\.mp4$/,
         use: 'file-loader',
+        exclude: /node_modules\/(?!(ui.rhamb.io)\/).*/,
       },
     ],
   },
