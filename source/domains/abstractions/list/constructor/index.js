@@ -3,6 +3,7 @@
 import { observable, computed, action } from 'mobx';
 import { processService } from '~/domains/abstractions/process';
 import { Process } from '~/domains/abstractions/process/constructor';
+import { wait } from '~/utils/wait';
 
 type Props = {
   entities: string[],
@@ -29,11 +30,15 @@ export class List {
   }
 
   @action
-  fetch = async (): Promise<string[]> => {
+  fetch = async (options: { delay: number } = {}): Promise<string[]> => {
     this.loaderProcess.start();
 
     try {
       const ids = await this.loader(this.length);
+
+      if (options.delay) {
+        await wait(options.delay);
+      }
 
       this.entities = [...this.entities, ...ids];
       this.loaderProcess.finish();

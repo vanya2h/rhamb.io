@@ -4,6 +4,8 @@ import React from 'react';
 import { Slide } from './slide';
 import { Slide01 } from './slide-01';
 import { Slide02 } from './slide-02';
+import { Slide03 } from './slide-03';
+import { Container } from 'ui.rhamb.io';
 import { DefaultLayout } from '~/components/composite/default-layout';
 
 import type { JSSObject } from '~/domains/app/jss/types';
@@ -19,10 +21,19 @@ export const IndexPageRaw = (props: Props) => {
     <DefaultLayout>
       <div className={classes.inner}>
         <Slide>
-          <Slide01 />
+          <Container>
+            <Slide01 />
+          </Container>
         </Slide>
         <Slide>
-          <Slide02 />
+          <Container>
+            <Slide02 />
+          </Container>
+        </Slide>
+        <Slide>
+          <Container>
+            <Slide03 />
+          </Container>
         </Slide>
       </div>
     </DefaultLayout>

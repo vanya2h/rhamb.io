@@ -12,12 +12,14 @@ export const styles = (theme) => ({
   logo: {
     fontWeight: 'bold',
   },
+  input: {
+    flexGrow: '1',
+  },
   search: {
     borderRadius: '10px',
     borderColor: 'transparent',
     background: '#F2F2F2',
     padding: '5px 13px',
-    width: '300px',
     '&:focus, &:active': {
       borderColor: 'transparent',
       background: '#e8e8e8',

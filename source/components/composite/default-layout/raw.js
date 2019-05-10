@@ -20,9 +20,7 @@ export const DefaultLayoutRaw = (props: Props) => {
           <Navigation />
         </Container>
       </div>
-      <div className={classes.content}>
-        <Container>{children}</Container>
-      </div>
+      <div className={classes.content}>{children}</div>
       <div className={classes.bottom}>
         <Container>Bottom</Container>
       </div>

@@ -28,7 +28,6 @@ export const styles = (theme) => ({
     lineHeight: '1.3',
   },
   description: {
-    fontSize: '24px',
     marginTop: '1.5rem',
   },
   buttons: {

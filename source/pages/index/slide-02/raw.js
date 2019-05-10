@@ -1,34 +1,66 @@
 // @flow
 
 import React from 'react';
+import classnames from 'classnames';
+import { SomethingWrong } from '~/components/composite/something-wrong';
+import { List } from '~/domains/abstractions/list/constructor';
+
 import {
   Button,
+  Spinner,
   HorizontalMenu,
   Heading,
+  Icon,
   Text,
   Link,
   Paragraph,
 } from 'ui.rhamb.io';
+
 import { Tool } from '~/components/entities/tool';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
 type Props = {
   classes: JSSObject,
-  toolsIds: string[],
+  list: List,
   error: ?Error,
   isHydrating: boolean,
 };
 
 export const Slide02Raw = (props: Props) => {
-  const { classes, toolsIds } = props;
+  const { classes, list, error, isHydrating } = props;
 
-  if (!toolsIds) {
-    return null;
+  const reloadHandler = () => {
+    list.fetch({
+      delay: 1000,
+    });
+  };
+
+  if (error) {
+    return (
+      <div className={classnames(classes.root, classes.root_error)}>
+        <SomethingWrong>
+          <Button
+            onClick={reloadHandler}
+            icon={<Icon icon="RefreshCcw" size={15} />}
+          >
+            Reload content
+          </Button>
+        </SomethingWrong>
+      </div>
+    );
   }
 
-  const topTools = toolsIds.slice(0, 3);
-  const bottomTools = toolsIds.slice(3, 5);
+  if (isHydrating) {
+    return (
+      <div className={classnames(classes.root, classes.root_loader)}>
+        <Spinner />
+      </div>
+    );
+  }
+
+  const topTools = list.entities.slice(0, 3);
+  const bottomTools = list.entities.slice(3, 5);
 
   return (
     <div className={classes.root}>
@@ -36,7 +68,7 @@ export const Slide02Raw = (props: Props) => {
         <Heading className={classes.title} size="h2" as="h2">
           Best libraries
         </Heading>
-        <Paragraph light>
+        <Paragraph light primary>
           Fast references on every major Javascript library
         </Paragraph>
       </div>
@@ -63,7 +95,7 @@ export const Slide02Raw = (props: Props) => {
           <Heading className={classes.title} size="h2" as="h2">
             All modern Javascript tools in one place
           </Heading>
-          <Paragraph className={classes.description} light>
+          <Paragraph className={classes.description} primary light>
             The only fastest way to learn most popular modern tools. All guides
             community-driven and open sourced. Try it for free
           </Paragraph>
