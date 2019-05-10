@@ -92,7 +92,7 @@ export const Slide02Raw = (props: Props) => {
           </HorizontalMenu>
         </div>
         <div className={classes.content}>
-          <Heading mega className={classes.title} size="h2" as="h2">
+          <Heading mega className={classes.title} size="h3" as="h3">
             All modern Javascript tools in one place
           </Heading>
           <Paragraph className={classes.description} primary light>

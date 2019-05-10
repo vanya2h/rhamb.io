@@ -59,7 +59,7 @@ export const Slide03Raw = (props: Props) => {
   return (
     <div className={classes.root}>
       <div className={classes.head}>
-        <Heading mega size="h2" as="h2">
+        <Heading mega size="h3" as="h3">
           People talk about rhamb.io
         </Heading>
         <Paragraph light primary>

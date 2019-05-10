@@ -5,6 +5,7 @@ import { Slide } from './slide';
 import { Slide01 } from './slide-01';
 import { Slide02 } from './slide-02';
 import { Slide03 } from './slide-03';
+import { Slide04 } from './slide-04';
 import { Container } from 'ui.rhamb.io';
 import { DefaultLayout } from '~/components/composite/default-layout';
 
@@ -33,6 +34,11 @@ export const IndexPageRaw = (props: Props) => {
         <Slide>
           <Container>
             <Slide03 />
+          </Container>
+        </Slide>
+        <Slide>
+          <Container>
+            <Slide04 />
           </Container>
         </Slide>
       </div>
