@@ -3,8 +3,9 @@ export const styles = (theme) => ({
     minWidth: '240px',
     maxWidth: '240px',
     background: theme.colors.basic,
+    borderRadius: '14px',
     transition: '.2s all ease-in-out',
-    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.03)',
+    boxShadow: '0px 5px 20px rgba(0, 0, 0, 0.04)',
     padding: '1.2rem',
     '&:hover': {
       boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.06)',

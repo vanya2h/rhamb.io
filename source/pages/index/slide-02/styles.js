@@ -33,7 +33,7 @@ export const styles = (theme) => ({
   buttons: {
     marginTop: '1.5rem',
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
-    '& * + *': {
+    '& > * + *': {
       marginLeft: '1rem',
     },
   },

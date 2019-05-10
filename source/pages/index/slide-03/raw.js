@@ -4,8 +4,16 @@ import React from 'react';
 import classnames from 'classnames';
 import { SomethingWrong } from '~/components/composite/something-wrong';
 import { List } from '~/domains/abstractions/list/constructor';
-import { Button, Spinner, Heading, Icon, Paragraph } from 'ui.rhamb.io';
 import { Feedback } from '~/components/entities/feedback';
+
+import {
+  HorizontalMenu,
+  Button,
+  Spinner,
+  Heading,
+  Icon,
+  Paragraph,
+} from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
@@ -51,7 +59,7 @@ export const Slide03Raw = (props: Props) => {
   return (
     <div className={classes.root}>
       <div className={classes.head}>
-        <Heading size="h2" as="h2">
+        <Heading mega size="h2" as="h2">
           People talk about rhamb.io
         </Heading>
         <Paragraph light primary>
@@ -65,9 +73,11 @@ export const Slide03Raw = (props: Props) => {
           </div>
         ))}
       </div>
-      <div className={classes.bottom}>
-        <Button arrowed>Apply my opinion too</Button>
-      </div>
+      <HorizontalMenu className={classes.bottom}>
+        <Button icon={<Icon icon="Smile" size={16} />} arrowed>
+          View all opinions
+        </Button>
+      </HorizontalMenu>
     </div>
   );
 };

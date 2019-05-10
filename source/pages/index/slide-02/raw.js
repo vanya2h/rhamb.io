@@ -65,7 +65,7 @@ export const Slide02Raw = (props: Props) => {
   return (
     <div className={classes.root}>
       <div className={classes.head}>
-        <Heading className={classes.title} size="h2" as="h2">
+        <Heading mega className={classes.title} size="h2" as="h2">
           Best libraries
         </Heading>
         <Paragraph light primary>
@@ -92,7 +92,7 @@ export const Slide02Raw = (props: Props) => {
           </HorizontalMenu>
         </div>
         <div className={classes.content}>
-          <Heading className={classes.title} size="h2" as="h2">
+          <Heading mega className={classes.title} size="h2" as="h2">
             All modern Javascript tools in one place
           </Heading>
           <Paragraph className={classes.description} primary light>
@@ -100,7 +100,9 @@ export const Slide02Raw = (props: Props) => {
             community-driven and open sourced. Try it for free
           </Paragraph>
           <div className={classes.buttons}>
-            <Button arrowed>Start for free</Button>
+            <Button icon={<Icon icon="Coffee" size={17} />}>
+              Start for free
+            </Button>
             <Text>
               <Link href="/prices">Or see our prices</Link>
             </Text>

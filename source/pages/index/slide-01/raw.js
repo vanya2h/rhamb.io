@@ -15,8 +15,10 @@ export const Slide01Raw = (props: Props) => {
   return (
     <div className={classes.root}>
       <div className={classes.left}>
-        <Paragraph light>What is rhamb.io?</Paragraph>
-        <Heading className={classes.title} size="h1" as="h1">
+        <Paragraph light primary>
+          What is rhamb.io?
+        </Paragraph>
+        <Heading mega className={classes.title} size="h2" as="h2">
           Your personal guide in <span>javascript</span> world
         </Heading>
         <Paragraph light className={classes.paragraph}>
