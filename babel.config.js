@@ -14,7 +14,8 @@ module.exports = (api) => {
     ],
     plugins: [
       ['@babel/plugin-proposal-decorators', { legacy: true, loose: true }],
-      ['@babel/plugin-transform-regenerator', { asyncGenerators: false }],
+      ['@babel/plugin-transform-regenerator', { asyncGenerators: true }],
+      '@babel/plugin-transform-runtime',
       '@babel/plugin-syntax-object-rest-spread',
       '@babel/plugin-proposal-object-rest-spread',
       ['@babel/plugin-syntax-class-properties', { loose: true }],

@@ -2,16 +2,17 @@
 
 import React, { useEffect } from 'react';
 import { hot } from 'react-hot-loader';
+import withStyles from 'react-jss';
 import { fontInjector } from 'ui.rhamb.io/src/business/font-injector';
 import { Switcher } from '~/domains/app/router/react/switcher';
 import { RouterProvider } from '~/domains/app/router/react/router-provider';
-import { routerService } from '~/domains/app/router';
 import { theme, fonts, defaultTheme } from 'ui.rhamb.io';
+import { styles } from './styles';
 
 const helveticaFonts = [
   new FontFace('Helvetica Neue', `url(${fonts.helveticaNeueLight})`, {
     style: 'normal',
-    weight: '400',
+    weight: '100',
   }),
   new FontFace('Helvetica Neue', `url(${fonts.helveticaNeueBold})`, {
     style: 'normal',
@@ -33,23 +34,9 @@ export const Root = () => {
     >
       <RouterProvider>
         <Switcher />
-        <button
-          onClick={() => {
-            routerService.pushHistory('index');
-          }}
-        >
-          Home
-        </button>
-        <button
-          onClick={() => {
-            routerService.pushHistory('about');
-          }}
-        >
-          About
-        </button>
       </RouterProvider>
     </theme.ThemeProvider>
   );
 };
 
-export default hot(module)(Root);
+export default hot(module)(withStyles(styles)(Root));

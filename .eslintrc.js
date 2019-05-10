@@ -30,13 +30,6 @@ module.exports = {
     browser: true,
   },
   rules: {
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-      },
-    ],
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
@@ -59,7 +52,5 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/require-default-props': 0,
     'react/display-name': 0,
-    'react/jsx-indent': ['error', 2],
-    'react/jsx-indent-props': ['error', 2],
   },
 };

@@ -35,19 +35,11 @@ const baseConfig = {
         include: [resolve('source'), resolve('node_modules/ui.rhamb.io')],
       },
       {
-        test: /\.(png|gif|jpg|woff|woff2)$/,
+        test: /\.(png|gif|jpg|woff|woff2|svg)$/,
         loader: 'url-loader',
         exclude: /node_modules\/(?!(ui.rhamb.io)\/).*/,
         options: {
           limit: 10000,
-        },
-      },
-      {
-        test: /\.svg$/,
-        loader: 'url-loader',
-        exclude: /node_modules\/(?!(ui.rhamb.io)\/).*/,
-        options: {
-          limit: 8,
         },
       },
       {
@@ -59,6 +51,9 @@ const baseConfig = {
   },
   plugins: [
     new webpack.EnvironmentPlugin(['NODE_ENV']),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
     new HtmlWebpackPlugin({
       chunks: ['main'],
       template: `${sourceDir}/index.html`,
