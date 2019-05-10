@@ -25,7 +25,7 @@ export const FeedbackCardViewRaw = (props: Props) => {
           height="100px"
         />
       </div>
-      <Heading className={classes.name} as="h4" size="h4">
+      <Heading mega className={classes.name} as="h5" size="h5">
         {feedbackData.author.name}
       </Heading>
       <Paragraph light>{feedbackData.author.description}</Paragraph>
