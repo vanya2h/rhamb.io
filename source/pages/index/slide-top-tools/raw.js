@@ -4,6 +4,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { SomethingWrong } from '~/components/composite/something-wrong';
 import { List } from '~/domains/abstractions/list/constructor';
+import { Slider } from '~/components/composite/slider';
 
 import {
   Button,
@@ -27,7 +28,7 @@ type Props = {
   isHydrating: boolean,
 };
 
-export const Slide02Raw = (props: Props) => {
+export const SlideTopToolsRaw = (props: Props) => {
   const { classes, list, error, isHydrating } = props;
 
   const reloadHandler = () => {
@@ -59,55 +60,67 @@ export const Slide02Raw = (props: Props) => {
     );
   }
 
-  const topTools = list.entities.slice(0, 3);
-  const bottomTools = list.entities.slice(3, 5);
-
   return (
     <div className={classes.root}>
       <div className={classes.head}>
-        <Heading mega className={classes.title} size="h2" as="h2">
-          Best libraries
+        <Heading className={classes.title} size="h3" as="h3">
+          Major Javascript tools in one place
         </Heading>
-        <Paragraph light primary>
-          Fast references on every major Javascript library
+        <Paragraph primary>
+          The only fastest way to learn most popular modern tools. All guides
+          community-driven and open sourced. Try it for free
         </Paragraph>
       </div>
       <div className={classes.top}>
-        <HorizontalMenu as="div">
-          {topTools.map((toolId) => (
+        <Slider
+          className={classes.list}
+          responsive={[
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+              },
+            },
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+            {
+              breakpoint: 420,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ]}
+        >
+          {list.entities.map((toolId) => (
             <div key={toolId} className={classes.item}>
               <Tool toolId={toolId} />
             </div>
           ))}
-        </HorizontalMenu>
+        </Slider>
       </div>
       <div className={classes.bottom}>
-        <div className={classes.right}>
-          <HorizontalMenu className={classes['horizontal-list']} as="div">
-            {bottomTools.map((toolId) => (
-              <div key={toolId} className={classes.item}>
-                <Tool toolId={toolId} />
-              </div>
-            ))}
-          </HorizontalMenu>
-        </div>
-        <div className={classes.content}>
-          <Heading mega className={classes.title} size="h3" as="h3">
-            All modern Javascript tools in one place
-          </Heading>
-          <Paragraph className={classes.description} primary light>
-            The only fastest way to learn most popular modern tools. All guides
-            community-driven and open sourced. Try it for free
-          </Paragraph>
-          <div className={classes.buttons}>
-            <Button icon={<Icon icon="Coffee" size={17} />}>
-              Start for free
-            </Button>
-            <Text>
-              <Link href="/prices">Or see our prices</Link>
-            </Text>
-          </div>
-        </div>
+        <HorizontalMenu className={classes.buttons}>
+          <Button icon={<Icon icon="Coffee" size={17} />}>
+            Start for free
+          </Button>
+          <Text>
+            <Link href="/prices">Or see our prices</Link>
+          </Text>
+        </HorizontalMenu>
       </div>
     </div>
   );

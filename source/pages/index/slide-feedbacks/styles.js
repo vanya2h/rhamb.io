@@ -7,10 +7,7 @@ export const styles = (theme) => ({
     margin: '3rem 0',
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.jc_sb],
     '& $item': {
-      '&:nth-child(1)': {
-        transform: 'translateY(30px)',
-      },
-      '&:nth-child(3)': {
+      '&:nth-child(2n-1)': {
         transform: 'translateY(30px)',
       },
     },

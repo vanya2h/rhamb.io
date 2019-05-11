@@ -16,24 +16,12 @@ export const styles = (theme) => ({
     flexGrow: '1',
   },
   search: {
-    borderRadius: '10px',
     borderColor: 'transparent',
     background: '#F2F2F2',
-    padding: '5px 13px',
+    width: '250px',
     '&:focus, &:active': {
       borderColor: 'transparent',
       background: '#e8e8e8',
     },
   },
-  signup: {
-    color: theme.colors.accent,
-    fontWeight: '800',
-    '& li': {
-      extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
-    },
-    '& $icon': {
-      marginLeft: '5px',
-    },
-  },
-  icon: {},
 });

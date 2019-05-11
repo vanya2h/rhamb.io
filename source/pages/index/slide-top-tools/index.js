@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { Slide02Raw } from './raw';
+import { SlideTopToolsRaw } from './raw';
 import withStyles from 'react-jss';
 import { toolRepository } from '~/domains/repositories/tool';
 import { useObserver } from 'mobx-react-lite';
@@ -14,7 +14,7 @@ type InjectedProps = {
   classes: JSSObject,
 };
 
-const Slide02BusinessProvider = (props: InjectedProps) =>
+const SlideTopToolsBusinessProvider = (props: InjectedProps) =>
   useObserver(() => {
     const [list, error, isHydrating] = useList((loadedLength) =>
       toolRepository
@@ -25,7 +25,7 @@ const Slide02BusinessProvider = (props: InjectedProps) =>
     );
 
     return (
-      <Slide02Raw
+      <SlideTopToolsRaw
         list={list}
         error={error}
         isHydrating={isHydrating}
@@ -34,4 +34,4 @@ const Slide02BusinessProvider = (props: InjectedProps) =>
     );
   });
 
-export const Slide02 = withStyles(styles)(Slide02BusinessProvider);
+export const SlideTopTools = withStyles(styles)(SlideTopToolsBusinessProvider);

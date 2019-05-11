@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { Icon, Input, HorizontalMenu, Link } from 'ui.rhamb.io';
+import { Icon, Button, Input, HorizontalMenu, Link } from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
@@ -18,18 +18,10 @@ export const NavigationRaw = (props: Props) => {
       <div className={classes.left}>
         <HorizontalMenu className={classes.menu}>
           <Link href="/tools">
-            <HorizontalMenu.Item className={classes.logo}>
-              Home
-            </HorizontalMenu.Item>
-          </Link>
-          <Link href="/tools">
             <HorizontalMenu.Item>Explore Javascript</HorizontalMenu.Item>
           </Link>
           <Link href="/paths">
-            <HorizontalMenu.Item>Workspaces</HorizontalMenu.Item>
-          </Link>
-          <Link href="/about">
-            <HorizontalMenu.Item>About Rhamb.io</HorizontalMenu.Item>
+            <HorizontalMenu.Item>Explore Workspaces</HorizontalMenu.Item>
           </Link>
           <div className={classes.input}>
             <Input
@@ -41,15 +33,14 @@ export const NavigationRaw = (props: Props) => {
       </div>
       <div className={classes.right}>
         <HorizontalMenu className={classes.menu}>
-          <Link href="/login">
-            <HorizontalMenu.Item>Log in</HorizontalMenu.Item>
-          </Link>
-          <Link className={classes.signup} href="/signup">
-            <HorizontalMenu.Item>
-              <span>Sign up</span>
-              <Icon className={classes.icon} size={16} icon="ArrowRight" />
-            </HorizontalMenu.Item>
-          </Link>
+          <HorizontalMenu.Item>
+            <Button icon={<Icon icon="LogIn" size={17} />}>Log in</Button>
+          </HorizontalMenu.Item>
+          <HorizontalMenu.Item>
+            <Button icon={<Icon icon="UserPlus" size={17} />} accent>
+              Sign up
+            </Button>
+          </HorizontalMenu.Item>
         </HorizontalMenu>
       </div>
     </div>

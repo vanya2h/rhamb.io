@@ -17,21 +17,23 @@ export const FeedbackCardViewRaw = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.image}>
-        <img
-          src={api.resolveImage(feedbackData.author.image)}
-          alt={feedbackData.author.name}
-          width="100px"
-          height="100px"
-        />
+      <div className={classes.head}>
+        <div className={classes.image}>
+          <img
+            src={api.resolveImage(feedbackData.author.image)}
+            alt={feedbackData.author.name}
+            width="60px"
+            height="60px"
+          />
+        </div>
+        <div className={classes.title}>
+          <Heading mega className={classes.name} as="h5" size="h5">
+            {feedbackData.author.name}
+          </Heading>
+          <Paragraph light>{feedbackData.author.description}</Paragraph>
+        </div>
       </div>
-      <Heading mega className={classes.name} as="h5" size="h5">
-        {feedbackData.author.name}
-      </Heading>
-      <Paragraph light>{feedbackData.author.description}</Paragraph>
-      <Paragraph primary className={classes.content}>
-        {feedbackData.content}
-      </Paragraph>
+      <Paragraph className={classes.content}>{feedbackData.content}</Paragraph>
     </div>
   );
 };

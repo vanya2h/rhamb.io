@@ -1,20 +1,20 @@
-export const styles = {
+export const styles = (theme) => ({
   root: {
     background: 'transparent',
     maxWidth: '350px',
-    textAlign: 'center',
-    padding: '2rem 1.5rem',
-    transition: '.2s all ease-in-out',
-    borderRadius: '14px',
-    boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.05)',
+    width: '350px',
+    padding: '0 1.5rem',
   },
   image: {
-    marginBottom: '0.5rem',
     '& img': {
       borderRadius: '100%',
     },
   },
-  content: {
-    marginTop: '1rem',
+  head: {
+    extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
+    marginBottom: '1rem',
   },
-};
+  title: {
+    marginLeft: '1rem',
+  },
+});

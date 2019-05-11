@@ -8,26 +8,29 @@ export const styles = (theme) => ({
     ],
   },
   left: {
-    width: '40%',
+    width: '65%',
     paddingRight: '1rem',
   },
   right: {
-    width: '60%',
+    width: '35%',
     paddingLeft: '1rem',
-    minWidth: '600px',
+  },
+  description: {
+    marginTop: '0.5rem',
   },
   steps: {
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
-    marginBottom: '1rem',
+    margin: '2rem 0',
   },
   step: {
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
+    marginRight: '1.5rem',
+    border: '1px solid #eee',
+    padding: '0.5rem 1.5rem',
+    borderRadius: '27px',
   },
   icon: {
-    marginRight: '0.5rem',
-  },
-  arrow: {
-    margin: '0 1rem',
+    marginRight: '1rem',
   },
   button: {
     marginTop: '2rem',

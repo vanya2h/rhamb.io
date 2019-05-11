@@ -24,7 +24,7 @@ type Props = {
   isHydrating: boolean,
 };
 
-export const Slide03Raw = (props: Props) => {
+export const SlideFeedbacksRaw = (props: Props) => {
   const { classes, list, error, isHydrating } = props;
 
   const reloadHandler = () => {
@@ -67,7 +67,7 @@ export const Slide03Raw = (props: Props) => {
         </Paragraph>
       </div>
       <div className={classes.list} as="div">
-        {list.entities.map((feedbackId) => (
+        {list.entities.slice(0, 3).map((feedbackId) => (
           <div key={feedbackId} className={classes.item}>
             <Feedback feedbackId={feedbackId} />
           </div>

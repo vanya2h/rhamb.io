@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { Slide03Raw } from './raw';
+import { SlideFeedbacksRaw } from './raw';
 import withStyles from 'react-jss';
 import { feedbackRepository } from '~/domains/repositories/feedback';
 import { useObserver } from 'mobx-react-lite';
@@ -14,7 +14,7 @@ type InjectedProps = {
   classes: JSSObject,
 };
 
-const Slide03BusinessProvider = (props: InjectedProps) =>
+const SlideFeedbacksBusinessProvider = (props: InjectedProps) =>
   useObserver(() => {
     const [list, error, isHydrating] = useList((loadedLength) =>
       feedbackRepository
@@ -27,7 +27,7 @@ const Slide03BusinessProvider = (props: InjectedProps) =>
     );
 
     return (
-      <Slide03Raw
+      <SlideFeedbacksRaw
         list={list}
         error={error}
         isHydrating={isHydrating}
@@ -36,4 +36,6 @@ const Slide03BusinessProvider = (props: InjectedProps) =>
     );
   });
 
-export const Slide03 = withStyles(styles)(Slide03BusinessProvider);
+export const SlideFeedbacks = withStyles(styles)(
+  SlideFeedbacksBusinessProvider,
+);
