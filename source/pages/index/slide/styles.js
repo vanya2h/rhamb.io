@@ -1,6 +1,12 @@
 export const styles = (theme) => ({
   root: {
     overflow: 'hidden',
+    padding: '2rem 0',
+    borderBottom: '1px solid #eee',
+    [`@media screen and ${theme.breakpoints.tablet}`]: {
+      padding: '3.5rem 0',
+      borderBottom: 0,
+    },
   },
   root_black: {
     color: theme.colors.basic,
@@ -8,16 +14,5 @@ export const styles = (theme) => ({
   },
   root_grey: {
     background: '#eee',
-  },
-  root_full: {
-    minHeight: '80vh',
-    extend: [
-      theme.utils.flexbox.row,
-      theme.utils.flexbox.ai_c,
-      theme.utils.flexbox.jc_c,
-    ],
-  },
-  inner: {
-    margin: '3.5rem 0',
   },
 });

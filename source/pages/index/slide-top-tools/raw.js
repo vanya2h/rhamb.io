@@ -64,11 +64,10 @@ export const SlideTopToolsRaw = (props: Props) => {
     <div className={classes.root}>
       <div className={classes.head}>
         <Heading className={classes.title} size="h3" as="h3">
-          Major Javascript tools in one place
+          Guides on all major Javascript tools
         </Heading>
         <Paragraph primary>
-          The only fastest way to learn most popular modern tools. All guides
-          community-driven and open sourced. Try it for free
+          Learn wide Javascript ecosystem just in one place
         </Paragraph>
       </div>
       <div className={classes.top}>
@@ -113,6 +112,10 @@ export const SlideTopToolsRaw = (props: Props) => {
         </Slider>
       </div>
       <div className={classes.bottom}>
+        <Paragraph primary>
+          The only fastest way to learn most popular modern tools. All guides
+          community-driven and open sourced. Try it for free
+        </Paragraph>
         <HorizontalMenu className={classes.buttons}>
           <Button icon={<Icon icon="Coffee" size={17} />}>
             Start for free

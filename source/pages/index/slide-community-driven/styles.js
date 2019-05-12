@@ -1,33 +1,32 @@
 export const styles = (theme) => ({
   root: {
-    extend: [
-      theme.utils.flexbox.row,
-      theme.utils.flexbox.jc_sb,
-      theme.utils.flexbox.ai_c,
-      theme.utils.flexbox.wrap,
-    ],
-  },
-  left: {
-    width: '65%',
-    paddingRight: '1rem',
-  },
-  right: {
-    width: '35%',
-    paddingLeft: '1rem',
+    textAlign: 'center',
+    extend: [theme.utils.flexbox.jc_c],
+    [`@media screen and ${theme.breakpoints.desktop}`]: {
+      textAlign: 'left',
+    },
   },
   description: {
     marginTop: '0.5rem',
   },
   steps: {
-    extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
-    margin: '2rem 0',
+    marginTop: '2rem',
   },
   step: {
-    extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
+    extend: [
+      theme.utils.flexbox.row,
+      theme.utils.flexbox.ai_c,
+      theme.utils.flexbox.jc_c,
+    ],
     marginRight: '1.5rem',
     border: '1px solid #eee',
-    padding: '0.5rem 1.5rem',
+    background: theme.colors.contrast_maximum,
+    color: theme.colors.basic,
+    padding: '0.5rem 1rem',
+    width: '100%',
     borderRadius: '27px',
+    fontSize: '0.85rem',
+    fontWeight: 'bold',
   },
   icon: {
     marginRight: '1rem',

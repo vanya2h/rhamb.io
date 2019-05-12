@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { Heading, Icon, Paragraph } from 'ui.rhamb.io';
+import { Heading, Icon, Paragraph, Grid } from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
@@ -13,38 +13,97 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
-      <div className={classes.left}>
+    <Grid.Row className={classes.root}>
+      <Grid.Column
+        options={{
+          mobile: {
+            width: 12,
+            order: 2,
+          },
+          desktop: {
+            width: 8,
+            order: 1,
+          },
+        }}
+      >
         <div className={classes.content}>
-          <Heading as="h3" mega size="h3">
+          <Heading as="h2" size="h2">
             We are community-driven
           </Heading>
           <Paragraph primary>
             Really simple steps to make a contribution
           </Paragraph>
-          <div className={classes.steps}>
-            <div className={classes.step}>
-              <Icon className={classes.icon} icon="MessageCircle" size={18} />
-              <Paragraph>Write draft</Paragraph>
-            </div>
-            <div className={classes.step}>
-              <Icon className={classes.icon} icon="UploadCloud" size={18} />
-              <Paragraph>Push changes</Paragraph>
-            </div>
-            <div className={classes.step}>
-              <Icon className={classes.icon} icon="ThumbsUp" size={18} />
-              <Paragraph>Be happy</Paragraph>
-            </div>
-          </div>
+          <Grid.Row className={classes.steps}>
+            <Grid.Column
+              options={{
+                mobile: {
+                  width: 12,
+                },
+                tablet: {
+                  width: 4,
+                },
+              }}
+            >
+              <div className={classes.step}>
+                <Icon className={classes.icon} icon="MessageCircle" size={18} />
+                Write drafts
+              </div>
+            </Grid.Column>
+            <Grid.Column
+              options={{
+                mobile: {
+                  width: 12,
+                },
+                tablet: {
+                  width: 4,
+                },
+              }}
+            >
+              <div className={classes.step}>
+                <Icon className={classes.icon} icon="UploadCloud" size={18} />
+                Push changes
+              </div>
+            </Grid.Column>
+            <Grid.Column
+              options={{
+                mobile: {
+                  width: 12,
+                },
+                tablet: {
+                  width: 4,
+                },
+              }}
+            >
+              <div className={classes.step}>
+                <Icon className={classes.icon} icon="ThumbsUp" size={18} />
+                Be contributor
+              </div>
+            </Grid.Column>
+          </Grid.Row>
           <Paragraph className={classes.description} primary>
             All our guides is provided by our community. Everybody can make a
             contribution to our open source education project - rhamb.io
           </Paragraph>
         </div>
-      </div>
-      <div className={classes.right}>
+      </Grid.Column>
+      <Grid.Column
+        options={{
+          mobile: {
+            width: 12,
+            order: 1,
+          },
+          tablet: {
+            width: 7,
+            order: 1,
+          },
+          desktop: {
+            width: 4,
+            order: 2,
+          },
+        }}
+      >
         <img src={require('./assets/man.svg')} width="100%" />
-      </div>
-    </div>
+      </Grid.Column>
+    </Grid.Row>
   );
 };

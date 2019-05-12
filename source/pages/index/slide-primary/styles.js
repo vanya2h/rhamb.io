@@ -1,23 +1,13 @@
 export const styles = (theme) => ({
-  root: {
-    extend: [
-      theme.utils.flexbox.row,
-      theme.utils.flexbox.ai_c,
-      theme.utils.flexbox.jc_sb,
-    ],
-  },
-  logo: {
-    width: '70px',
-    '& *': {
-      fill: theme.colors.accent,
+  row: {
+    extend: [theme.utils.flexbox.ai_c],
+    textAlign: 'center',
+    [`@media screen and ${theme.breakpoints.tablet}`]: {
+      textAlign: 'left',
     },
-  },
-  logo_circle: {
-    fill: theme.colors.basic,
   },
   paragraph: {
     marginTop: '2rem',
-    fontSize: '24px',
   },
   title: {
     marginTop: '1rem',
@@ -26,13 +16,13 @@ export const styles = (theme) => ({
       color: theme.colors.accent,
     },
   },
+  actions: {
+    extend: [theme.utils.flexbox.row, theme.utils.flexbox.jc_c],
+    [`@media screen and ${theme.breakpoints.tablet}`]: {
+      extend: [theme.utils.flexbox.jc_fs],
+    },
+  },
   button: {
     marginTop: '2rem',
-  },
-  left: {
-    maxWidth: '500px',
-  },
-  right: {
-    maxWidth: '500px',
   },
 });

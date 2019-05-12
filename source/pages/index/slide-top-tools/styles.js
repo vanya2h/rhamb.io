@@ -3,17 +3,11 @@ export const styles = (theme) => ({
     maxWidth: '600px',
     textAlign: 'center',
     margin: 'auto',
-    marginBottom: '3rem',
-  },
-  left: {
-    width: '50%',
-    paddingRight: '3rem',
-  },
-  right: {
-    width: '50%',
+    marginBottom: '2rem',
   },
   item: {
-    margin: '2rem 0',
+    margin: '1rem 0',
+    padding: '0.7rem',
   },
   title: {
     lineHeight: '1.3',
@@ -24,13 +18,23 @@ export const styles = (theme) => ({
   },
   bottom: {
     marginTop: '3rem',
+    maxWidth: '600px',
+    textAlign: 'center',
+    margin: 'auto',
     extend: [
-      theme.utils.flexbox.row,
+      theme.utils.flexbox.col,
       theme.utils.flexbox.jc_c,
       theme.utils.flexbox.ai_c,
     ],
   },
   buttons: {
+    marginTop: '2rem',
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
+    [`@media screen and (max-width: 395px)`]: {
+      extend: [theme.utils.flexbox.col],
+      '& > * + *': {
+        marginTop: '1rem',
+      },
+    },
   },
 });

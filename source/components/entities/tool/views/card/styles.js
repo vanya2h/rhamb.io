@@ -1,19 +1,11 @@
 export const styles = (theme) => ({
   root: {
-    minWidth: '210px',
-    maxWidth: '210px',
     background: theme.colors.basic,
     transition: '.2s all ease-in-out',
     boxShadow: '0px 5px 20px rgba(0, 0, 0, 0.04)',
     padding: '1.2rem',
     '&:hover': {
       boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.06)',
-    },
-  },
-  [`@media only screen and ${theme.breakpoints.tv}`]: {
-    root: {
-      minWidth: '250px',
-      maxWidth: '250px',
     },
   },
   img: {
@@ -35,9 +27,6 @@ export const styles = (theme) => ({
   icon: {
     color: theme.colors.accent,
     marginRight: '5px',
-  },
-  text: {
-    fontSize: '0.95rem',
   },
   category: {
     cursor: 'pointer',

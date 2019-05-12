@@ -38,9 +38,7 @@ export const ToolCardViewRaw = (props: Props) => {
       <div className={classes.bottom}>
         <div className={classes.pins}>
           <Icon icon="Bookmark" size={17} className={classes.icon} />
-          <Text light className={classes.text}>
-            {toolData.pinCount} Pins
-          </Text>
+          <Text light>{toolData.pinCount} Pins</Text>
         </div>
         <Text
           className={classes.category}

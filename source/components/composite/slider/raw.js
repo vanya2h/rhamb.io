@@ -7,7 +7,7 @@ import { Icon } from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
-const NextArrow = (props: { className: string, onClick: Function }) => {
+function NextArrow(props: { className: string, onClick: Function }) {
   const { onClick, className } = props;
 
   return (
@@ -15,9 +15,9 @@ const NextArrow = (props: { className: string, onClick: Function }) => {
       <Icon icon="ArrowRight" size={20} />
     </div>
   );
-};
+}
 
-const PrevArrow = (props: { className: string, onClick: Function }) => {
+function PrevArrow(props: { className: string, onClick: Function }) {
   const { onClick, className } = props;
 
   return (
@@ -25,7 +25,7 @@ const PrevArrow = (props: { className: string, onClick: Function }) => {
       <Icon icon="ArrowLeft" size={20} />
     </div>
   );
-};
+}
 
 type Props = {
   children: any,

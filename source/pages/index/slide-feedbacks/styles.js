@@ -5,15 +5,16 @@ export const styles = (theme) => ({
   },
   list: {
     margin: '3rem 0',
-    extend: [theme.utils.flexbox.row, theme.utils.flexbox.jc_sb],
-    '& $item': {
-      '&:nth-child(2n-1)': {
-        transform: 'translateY(30px)',
+    extend: [theme.utils.flexbox.row, theme.utils.flexbox.jc_c],
+    [`@media screen and (min-width: ${
+      theme.breakpoints.gridRanges.desktop[0]
+    }px)`]: {
+      '& > *': {
+        '&:nth-child(2n-1)': {
+          transform: 'translateY(30px)',
+        },
       },
     },
-  },
-  item: {
-    marginTop: '0',
   },
   bottom: {
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.jc_c],

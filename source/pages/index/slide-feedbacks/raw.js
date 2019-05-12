@@ -9,6 +9,7 @@ import { Feedback } from '~/components/entities/feedback';
 import {
   HorizontalMenu,
   Button,
+  Grid,
   Spinner,
   Heading,
   Icon,
@@ -59,20 +60,33 @@ export const SlideFeedbacksRaw = (props: Props) => {
   return (
     <div className={classes.root}>
       <div className={classes.head}>
-        <Heading mega size="h3" as="h3">
+        <Heading size="h3" as="h3">
           People talk about rhamb.io
         </Heading>
         <Paragraph light primary>
           We love our community and community loves us
         </Paragraph>
       </div>
-      <div className={classes.list} as="div">
+      <Grid.Row className={classes.list}>
         {list.entities.slice(0, 3).map((feedbackId) => (
-          <div key={feedbackId} className={classes.item}>
+          <Grid.Column
+            options={{
+              mobile: {
+                width: 12,
+              },
+              tablet: {
+                width: 6,
+              },
+              desktop: {
+                width: 4,
+              },
+            }}
+            key={feedbackId}
+          >
             <Feedback feedbackId={feedbackId} />
-          </div>
+          </Grid.Column>
         ))}
-      </div>
+      </Grid.Row>
       <HorizontalMenu className={classes.bottom}>
         <Button icon={<Icon icon="Smile" size={16} />} arrowed>
           View all opinions

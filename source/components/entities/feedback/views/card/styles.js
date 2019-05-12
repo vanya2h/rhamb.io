@@ -1,9 +1,8 @@
 export const styles = (theme) => ({
   root: {
     background: 'transparent',
-    maxWidth: '350px',
-    width: '350px',
-    padding: '0 1.5rem',
+    maxWidth: '100%',
+    margin: '0 auto',
   },
   image: {
     '& img': {
@@ -16,5 +15,16 @@ export const styles = (theme) => ({
   },
   title: {
     marginLeft: '1rem',
+  },
+
+  [`@media screen and (max-width: ${
+    theme.breakpoints.gridRanges.desktop[0]
+  }px)`]: {
+    root: {
+      textAlign: 'center',
+    },
+    head: {
+      extend: [theme.utils.flexbox.col, theme.utils.flexbox.jc_c],
+    },
   },
 });
