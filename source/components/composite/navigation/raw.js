@@ -1,7 +1,9 @@
 // @flow
 
-import React from 'react';
-import { Icon, Button, Input, HorizontalMenu, Link } from 'ui.rhamb.io';
+import React, { useState } from 'react';
+import classnames from 'classnames';
+import { UnstyledButton } from '~/components/common/unstyled-button';
+import { Icon, Input, HorizontalMenu, ProgressiveRender } from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
@@ -13,36 +15,140 @@ type Props = {|
 export const NavigationRaw = (props: Props) => {
   const { classes } = props;
 
+  const [openBurger, setOpenBurger] = useState(false);
+
+  const Menu = () => (
+    <HorizontalMenu className={classes.menu}>
+      <HorizontalMenu.Item className={classes.item}>
+        Personal feed
+      </HorizontalMenu.Item>
+      <HorizontalMenu.Item className={classes.item}>
+        Explore Javascript
+      </HorizontalMenu.Item>
+      <div className={classes.search}>
+        <ProgressiveRender
+          options={{
+            handy: {
+              render: () => (
+                <HorizontalMenu.Item className={classes.item}>
+                  <Icon className={classes.icon} icon="Search" size={16} />
+                </HorizontalMenu.Item>
+              ),
+            },
+            desktop: {
+              render: () => (
+                <div className={classes['search-input-wrapper']}>
+                  <Icon className={classes.icon} icon="Search" size={16} />
+                  <Input
+                    className={classes.input}
+                    placeholder="Enter search query here.."
+                  />
+                </div>
+              ),
+            },
+          }}
+        />
+      </div>
+    </HorizontalMenu>
+  );
+
   return (
     <div className={classes.root}>
-      <div className={classes.left}>
-        <HorizontalMenu className={classes.menu}>
-          <Link href="/tools">
-            <HorizontalMenu.Item>Explore Javascript</HorizontalMenu.Item>
-          </Link>
-          <Link href="/paths">
-            <HorizontalMenu.Item>Explore Workspaces</HorizontalMenu.Item>
-          </Link>
-          <div className={classes.input}>
-            <Input
-              className={classes.search}
-              placeholder="Search for libraries, tools.."
-            />
-          </div>
-        </HorizontalMenu>
+      <div className={classes.row}>
+        <div className={classes.left}>
+          <ProgressiveRender
+            options={{
+              handy: {
+                render: () => (
+                  <UnstyledButton
+                    onClick={() => setOpenBurger(!openBurger)}
+                    className={classes.burger}
+                  >
+                    <Icon
+                      className={classes.icon}
+                      icon={openBurger ? 'X' : 'Menu'}
+                      size={20}
+                    />
+                    {openBurger ? 'Hide' : 'Menu'}
+                  </UnstyledButton>
+                ),
+              },
+              mobile: {
+                render: Menu,
+              },
+            }}
+          />
+        </div>
+        <div className={classes.right}>
+          <HorizontalMenu className={classes.menu}>
+            <HorizontalMenu.Item className={classes.item}>
+              <ProgressiveRender
+                options={{
+                  handy: {
+                    render: () => (
+                      <React.Fragment>
+                        <Icon icon="LogIn" size={16} className={classes.icon} />{' '}
+                        Log in
+                      </React.Fragment>
+                    ),
+                  },
+                  mobile: {
+                    render: () => <React.Fragment>Log in</React.Fragment>,
+                  },
+                  tablet: {
+                    render: () => (
+                      <React.Fragment>
+                        <Icon icon="LogIn" size={16} className={classes.icon} />{' '}
+                        Log in
+                      </React.Fragment>
+                    ),
+                  },
+                }}
+              />
+            </HorizontalMenu.Item>
+            <HorizontalMenu.Item
+              className={classnames(classes.signup, classes.item)}
+            >
+              <ProgressiveRender
+                options={{
+                  handy: {
+                    render: () => (
+                      <React.Fragment>
+                        <Icon
+                          icon="UserPlus"
+                          size={16}
+                          className={classes.icon}
+                        />{' '}
+                        Sign up
+                      </React.Fragment>
+                    ),
+                  },
+                  mobile: {
+                    render: () => <React.Fragment>Sign up</React.Fragment>,
+                  },
+                  tablet: {
+                    render: () => (
+                      <React.Fragment>
+                        <Icon
+                          icon="UserPlus"
+                          size={16}
+                          className={classes.icon}
+                        />{' '}
+                        Sign up
+                      </React.Fragment>
+                    ),
+                  },
+                }}
+              />
+            </HorizontalMenu.Item>
+          </HorizontalMenu>
+        </div>
       </div>
-      <div className={classes.right}>
-        <HorizontalMenu className={classes.menu}>
-          <HorizontalMenu.Item>
-            <Button icon={<Icon icon="LogIn" size={17} />}>Log in</Button>
-          </HorizontalMenu.Item>
-          <HorizontalMenu.Item>
-            <Button icon={<Icon icon="UserPlus" size={17} />} accent>
-              Sign up
-            </Button>
-          </HorizontalMenu.Item>
-        </HorizontalMenu>
-      </div>
+      {openBurger && (
+        <div className={classes.dropdown}>
+          <Menu />
+        </div>
+      )}
     </div>
   );
 };

@@ -89,14 +89,14 @@ export const SlideTopToolsRaw = (props: Props) => {
               },
             },
             {
-              breakpoint: 600,
+              breakpoint: 767,
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
               },
             },
             {
-              breakpoint: 420,
+              breakpoint: 574,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,

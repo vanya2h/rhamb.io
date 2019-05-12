@@ -36,8 +36,11 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
           <Grid.Row className={classes.steps}>
             <Grid.Column
               options={{
-                mobile: {
+                handy: {
                   width: 12,
+                },
+                mobile: {
+                  width: 6,
                 },
                 tablet: {
                   width: 4,
@@ -51,8 +54,11 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
             </Grid.Column>
             <Grid.Column
               options={{
-                mobile: {
+                handy: {
                   width: 12,
+                },
+                mobile: {
+                  width: 6,
                 },
                 tablet: {
                   width: 4,
@@ -66,7 +72,7 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
             </Grid.Column>
             <Grid.Column
               options={{
-                mobile: {
+                handy: {
                   width: 12,
                 },
                 tablet: {
