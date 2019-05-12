@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { Slide } from './slide';
+import { Container } from 'ui.rhamb.io';
 import { SlidePrimary } from './slide-primary';
 import { SlideTopTools } from './slide-top-tools';
 import { SlideFeedbacks } from './slide-feedbacks';
 import { SlideCommunityDriven } from './slide-community-driven';
-import { Slide05 } from './slide-05';
-import { Container } from 'ui.rhamb.io';
+import { SlideCollections } from './slide-collections';
 import { DefaultLayout } from '~/components/composite/default-layout';
 
 import type { JSSObject } from '~/domains/app/jss/types';
@@ -44,7 +44,7 @@ export const IndexPageRaw = (props: Props) => {
         </Slide>
         <Slide>
           <Container>
-            <Slide05 />
+            <SlideCollections />
           </Container>
         </Slide>
       </div>
