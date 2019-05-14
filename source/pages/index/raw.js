@@ -5,6 +5,7 @@ import { Slide } from './slide';
 import { Container } from 'ui.rhamb.io';
 import { SlidePrimary } from './slide-primary';
 import { SlideTopTools } from './slide-top-tools';
+import { SlidePlans } from './slide-plans';
 import { SlideFeedbacks } from './slide-feedbacks';
 import { SlideCommunityDriven } from './slide-community-driven';
 import { SlideCollections } from './slide-collections';
@@ -45,6 +46,11 @@ export const IndexPageRaw = (props: Props) => {
         <Slide>
           <Container>
             <SlideCollections />
+          </Container>
+        </Slide>
+        <Slide>
+          <Container>
+            <SlidePlans />
           </Container>
         </Slide>
       </div>
