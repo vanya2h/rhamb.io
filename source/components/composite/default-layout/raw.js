@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container } from 'ui.rhamb.io';
 import { Navigation } from '~/components/composite/navigation';
+import { Footer } from '~/components/composite/footer';
 import type { JSSObject } from '~/domains/app/jss/types';
 
 type Props = {|
@@ -22,7 +23,7 @@ export const DefaultLayoutRaw = (props: Props) => {
       </div>
       <div className={classes.content}>{children}</div>
       <div className={classes.bottom}>
-        <Container>Bottom</Container>
+        <Footer />
       </div>
     </div>
   );

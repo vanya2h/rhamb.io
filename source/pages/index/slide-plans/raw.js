@@ -101,6 +101,11 @@ export const SlidePlansRaw = (props: Props) => {
           />
         </Grid.Column>
       </Grid.Row>
+      <Grid.Row className={classes.footer}>
+        <Heading as="h1" size="h1" mega>
+          Become a true Javascript-ninja
+        </Heading>
+      </Grid.Row>
     </div>
   );
 };
