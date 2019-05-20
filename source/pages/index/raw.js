@@ -28,7 +28,7 @@ export const IndexPageRaw = (props: Props) => {
             <SlidePrimary />
           </Container>
         </Slide>
-        <Slide>
+        <Slide fullscreen>
           <Container>
             <SlideTopTools />
           </Container>
@@ -38,7 +38,7 @@ export const IndexPageRaw = (props: Props) => {
             <SlideCommunityDriven />
           </Container>
         </Slide>
-        <Slide black>
+        <Slide black fullscreen>
           <Container>
             <SlideFeedbacks />
           </Container>
@@ -48,7 +48,7 @@ export const IndexPageRaw = (props: Props) => {
             <SlideCollections />
           </Container>
         </Slide>
-        <Slide>
+        <Slide fullscreen>
           <Container>
             <SlidePlans />
           </Container>

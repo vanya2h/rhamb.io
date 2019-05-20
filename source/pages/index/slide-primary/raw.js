@@ -64,6 +64,9 @@ export const SlidePrimaryRaw = (props: Props) => {
               >
                 Watch video
               </Button>
+              <Button arrowed accent className={classes.button}>
+                Sign up
+              </Button>
             </HorizontalMenu>
           </Grid.Column>
         </Grid.Row>

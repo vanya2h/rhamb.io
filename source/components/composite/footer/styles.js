@@ -1,4 +1,7 @@
 export const styles = () => ({
+  root: {
+    padding: '2rem 0',
+  },
   subtitle: {
     marginTop: '0.5rem',
   },

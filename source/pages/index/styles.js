@@ -1,1 +1,5 @@
-export const styles = {};
+export const styles = {
+  inner: {
+    background: '#fafafa',
+  },
+};

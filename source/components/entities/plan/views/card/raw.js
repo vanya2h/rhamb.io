@@ -3,11 +3,8 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Button, Heading, Paragraph, Icon, Text } from 'ui.rhamb.io';
-// import { api } from '~/domains/app/api-client';
-// import { routerService } from '~/domains/app/router';
 import { Shape as PlanShape } from '~/domains/entities/plan/types';
 import { getFormattedPrice, getPeriodLabel } from '~/domains/app/plans/utils';
-// import { Truncate } from '~/components/common/truncate';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 

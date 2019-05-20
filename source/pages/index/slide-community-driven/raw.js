@@ -108,7 +108,11 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
           },
         }}
       >
-        <img src={require('./assets/man.svg')} width="100%" />
+        <img
+          className={classes.image}
+          src={require('./assets/man.svg')}
+          width="100%"
+        />
       </Grid.Column>
     </Grid.Row>
   );

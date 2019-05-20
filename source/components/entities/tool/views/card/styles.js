@@ -1,8 +1,14 @@
+import chroma from 'chroma-js';
+
 export const styles = (theme) => ({
   root: {
-    background: theme.colors.basic,
+    background: theme.colors.contrast_maximum,
+    color: theme.colors.basic,
+    borderRadius: '17px',
     transition: '.2s all ease-in-out',
-    boxShadow: '0px 5px 20px rgba(0, 0, 0, 0.04)',
+    boxShadow: `0 10px 15px rgba(${chroma(theme.colors.contrast)
+      .alpha(0.2)
+      .rgba()})`,
     padding: '1.2rem',
     '&:hover': {
       boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.06)',

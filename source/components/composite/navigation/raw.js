@@ -3,7 +3,13 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { UnstyledButton } from '~/components/common/unstyled-button';
-import { Icon, Input, HorizontalMenu, ProgressiveRender } from 'ui.rhamb.io';
+import {
+  Icon,
+  Input,
+  HorizontalMenu,
+  ProgressiveRender,
+  Container,
+} from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
@@ -53,7 +59,7 @@ export const NavigationRaw = (props: Props) => {
   );
 
   return (
-    <div className={classes.root}>
+    <Container className={classes.root}>
       <div className={classes.row}>
         <div className={classes.left}>
           <ProgressiveRender
@@ -149,6 +155,6 @@ export const NavigationRaw = (props: Props) => {
           <Menu />
         </div>
       )}
-    </div>
+    </Container>
   );
 };

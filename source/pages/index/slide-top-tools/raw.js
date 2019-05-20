@@ -12,8 +12,6 @@ import {
   HorizontalMenu,
   Heading,
   Icon,
-  Text,
-  Link,
   Paragraph,
 } from 'ui.rhamb.io';
 
@@ -120,9 +118,9 @@ export const SlideTopToolsRaw = (props: Props) => {
           <Button icon={<Icon icon="Coffee" size={17} />}>
             Start for free
           </Button>
-          <Text>
-            <Link href="/prices">Or see our prices</Link>
-          </Text>
+          <Button transparent icon={<Icon icon="Clipboard" size={17} />}>
+            Or see our prices
+          </Button>
         </HorizontalMenu>
       </div>
     </div>

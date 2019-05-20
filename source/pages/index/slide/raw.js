@@ -11,10 +11,11 @@ type Props = {
   className?: string,
   black?: boolean,
   grey?: boolean,
+  fullscreen?: boolean,
 };
 
 export const SlideRaw = (props: Props) => {
-  const { classes, children, className, black, grey } = props;
+  const { classes, children, className, black, grey, fullscreen } = props;
 
   return (
     <div
@@ -22,6 +23,7 @@ export const SlideRaw = (props: Props) => {
         classes.root,
         { [classes.root_black]: black },
         { [classes.root_grey]: grey },
+        { [classes.root_fullscreen]: fullscreen },
         className,
       )}
     >

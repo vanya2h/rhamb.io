@@ -20,12 +20,12 @@ export const styles = (theme) => ({
     ],
     marginRight: '1.5rem',
     border: '1px solid #eee',
-    background: theme.colors.contrast_maximum,
-    color: theme.colors.basic,
+    background: '#eee',
+    color: theme.colors.contrast_maximum,
     padding: '0.5rem 1rem',
     width: '100%',
     borderRadius: '27px',
-    fontSize: '0.85rem',
+    fontSize: '0.83rem',
     fontWeight: 'bold',
   },
   icon: {
@@ -33,5 +33,8 @@ export const styles = (theme) => ({
   },
   button: {
     marginTop: '2rem',
+  },
+  image: {
+    maxWidth: '300px',
   },
 });

@@ -101,11 +101,12 @@ export const SlidePlansRaw = (props: Props) => {
           />
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row className={classes.footer}>
+      <div className={classes.footer}>
         <Heading as="h1" size="h1" mega>
           Become a true Javascript-ninja
         </Heading>
-      </Grid.Row>
+        <Paragraph primary>With Rhamb.io</Paragraph>
+      </div>
     </div>
   );
 };

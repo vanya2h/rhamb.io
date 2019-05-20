@@ -1,7 +1,19 @@
 // @flow
 
 import React from 'react';
-import { Icon, Link, Text, Grid, Paragraph, Heading } from 'ui.rhamb.io';
+
+import {
+  Icon,
+  Link,
+  Text,
+  ProgressiveRender,
+  HorizontalMenu,
+  Button,
+  Grid,
+  Paragraph,
+  Heading,
+} from 'ui.rhamb.io';
+
 import { api } from '~/domains/app/api-client';
 import { minutesToHumable } from '~/utils/minutes-to-humable';
 import { Shape as CollectionShape } from '~/domains/entities/collection/types';
@@ -33,7 +45,20 @@ export const CollectionCardViewRaw = (props: Props) => {
           className={classes.image}
         >
           <img width="100%" src={api.resolveImage(collectionData.image)} />
-          <Text light>{minutesToHumable(collectionData.averageTime)}</Text>
+          <ProgressiveRender
+            options={{
+              handy: {
+                render: () => null,
+              },
+              tablet: {
+                render: () => (
+                  <Text light>
+                    {minutesToHumable(collectionData.averageTime)}
+                  </Text>
+                ),
+              },
+            }}
+          />
         </Grid.Column>
         <Grid.Column
           options={{
@@ -45,27 +70,44 @@ export const CollectionCardViewRaw = (props: Props) => {
             },
           }}
         >
-          <div className={classes.head}>
-            <Icon
-              className={classes['head-icon']}
-              icon={getComplexityIcon(collectionData.complexity)}
-              size={17}
+          <HorizontalMenu className={classes['head-menu']}>
+            <HorizontalMenu.Item>
+              <Icon
+                className={classes['head-icon']}
+                icon={getComplexityIcon(collectionData.complexity)}
+                size={17}
+              />
+              <Text light>{getComplexityTitle(collectionData.complexity)}</Text>
+            </HorizontalMenu.Item>
+            <ProgressiveRender
+              options={{
+                handy: {
+                  render: () => (
+                    <HorizontalMenu.Item>
+                      <Text light>
+                        {minutesToHumable(collectionData.averageTime)}
+                      </Text>
+                    </HorizontalMenu.Item>
+                  ),
+                },
+                tablet: {
+                  render: () => null,
+                },
+              }}
             />
-            <Text light>{getComplexityTitle(collectionData.complexity)}</Text>
-          </div>
+          </HorizontalMenu>
           <div className={classes.content}>
             <Heading className={classes.title} as="h2" size="h6">
               <Link className={classes['title-link']}>
                 {collectionData.title}
               </Link>
             </Heading>
-            <Paragraph light>
+            <Paragraph>
               <Truncate lines={2}>{collectionData.annotation}</Truncate>
             </Paragraph>
-            <Link href="/" className={classes.link}>
-              <span>Start learning</span>
-              <Icon icon="ArrowRight" size={17} />
-            </Link>
+            <Button className={classes.button} transparent arrowed>
+              Start learning
+            </Button>
           </div>
         </Grid.Column>
       </Grid.Row>
