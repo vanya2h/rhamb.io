@@ -2,6 +2,7 @@ import chroma from 'chroma-js';
 
 export const styles = (theme) => ({
   root: {
+    textAlign: 'left',
     background: theme.colors.contrast_maximum,
     color: theme.colors.basic,
     borderRadius: '17px',

@@ -11,6 +11,7 @@ import {
   Button,
   Spinner,
   HorizontalMenu,
+  Container,
   Heading,
   Icon,
   Paragraph,
@@ -61,56 +62,58 @@ export const SlideTopToolsRaw = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.head}>
-        <Heading className={classes.title} size="h3" as="h3">
-          {"Master's toolsbelt"}
-        </Heading>
-        <Paragraph primary light>
-          Learn wide Javascript ecosystem just in one place
-        </Paragraph>
-      </div>
-      <div className={classes.top}>
-        <Slider
-          className={classes.list}
-          responsive={[
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
+      <Container>
+        <div className={classes.head}>
+          <Heading className={classes.title} size="h3" as="h3">
+            {"Master's toolsbelt"}
+          </Heading>
+          <Paragraph primary light>
+            Learn wide Javascript ecosystem just in one place
+          </Paragraph>
+        </div>
+        <div className={classes.top}>
+          <Slider
+            className={classes.list}
+            responsive={[
+              {
+                breakpoint: 1200,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 4,
+                },
               },
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+              {
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                },
               },
-            },
-            {
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
+              {
+                breakpoint: 767,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                },
               },
-            },
-            {
-              breakpoint: 574,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
+              {
+                breakpoint: 574,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                },
               },
-            },
-          ]}
-        >
-          {list.entities.map((toolId) => (
-            <div key={toolId} className={classes.item}>
-              <Tool toolId={toolId} />
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className={classes.bottom}>
+            ]}
+          >
+            {list.entities.map((toolId) => (
+              <div key={toolId} className={classes.item}>
+                <Tool toolId={toolId} />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </Container>
+      <Container text className={classes.bottom}>
         <Paragraph primary light>
           The only fastest way to learn most popular modern tools. All guides
           community-driven and open sourced. Try it for free
@@ -123,7 +126,7 @@ export const SlideTopToolsRaw = (props: Props) => {
             Or see our prices
           </Button>
         </HorizontalMenu>
-      </div>
+      </Container>
     </div>
   );
 };

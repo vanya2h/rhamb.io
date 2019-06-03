@@ -1,8 +1,8 @@
 export const styles = (theme) => ({
-  head: {
-    maxWidth: '600px',
+  root: {
     textAlign: 'center',
-    margin: 'auto',
+  },
+  head: {
     marginBottom: '2rem',
   },
   item: {
@@ -18,9 +18,6 @@ export const styles = (theme) => ({
   },
   bottom: {
     marginTop: '3rem',
-    maxWidth: '600px',
-    textAlign: 'center',
-    margin: 'auto',
     extend: [
       theme.utils.flexbox.col,
       theme.utils.flexbox.jc_c,

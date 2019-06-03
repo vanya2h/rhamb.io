@@ -3,7 +3,15 @@
 import React from 'react';
 import classnames from 'classnames';
 import { SomethingWrong } from '~/components/composite/something-wrong';
-import { Button, Spinner, Grid, Heading, Icon, Paragraph } from 'ui.rhamb.io';
+import {
+  Button,
+  Spinner,
+  Container,
+  Grid,
+  Heading,
+  Icon,
+  Paragraph,
+} from 'ui.rhamb.io';
 import { Plan } from '~/components/entities/plan';
 
 import type { JSSObject } from '~/domains/app/jss/types';
@@ -44,14 +52,17 @@ export const SlidePlansRaw = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.heading}>
-        <Heading as="h2" size="h2">
-          But what about the price? Is this free?
-        </Heading>
-        <Paragraph primary>
-          Yes, but we have payable subscription. See our plans
-        </Paragraph>
-      </div>
+      <Container text>
+        <div className={classes.heading}>
+          <Heading as="h2" size="h2">
+            Wait, is this free?
+          </Heading>
+          <Paragraph primary light>
+            Yes, but we have payable subscription. Here you can see our free and
+            paid plans.
+          </Paragraph>
+        </div>
+      </Container>
       <Grid.Row>
         {plansIds.map((planId) => (
           <Grid.Column

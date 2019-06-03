@@ -10,6 +10,7 @@ import {
   HorizontalMenu,
   Button,
   Grid,
+  Container,
   Spinner,
   Heading,
   Icon,
@@ -59,14 +60,14 @@ export const SlideFeedbacksRaw = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.head}>
+      <Container text className={classes.head}>
         <Heading size="h3" as="h3">
-          People talk about rhamb.io
+          Our customers
         </Heading>
         <Paragraph light primary>
           We love our community and community loves us
         </Paragraph>
-      </div>
+      </Container>
       <Grid.Row className={classes.list}>
         {list.entities.slice(0, 3).map((feedbackId) => (
           <Grid.Column

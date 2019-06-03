@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ShadowButton } from '~/components/wrappers/shadow-button';
-import { Heading, Icon, Paragraph, Grid } from 'ui.rhamb.io';
+import { Container, Heading, Icon, Paragraph, Grid } from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
 
@@ -27,9 +27,9 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
           },
         }}
       >
-        <div className={classes.content}>
+        <Container text className={classes.content}>
           <Heading as="h2" size="h2">
-            We are community-driven
+            Open source
           </Heading>
           <Paragraph primary light>
             Really simple steps to make a contribution
@@ -47,7 +47,7 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
           >
             Become a contributor now
           </ShadowButton>
-        </div>
+        </Container>
       </Grid.Column>
       <Grid.Column
         options={{

@@ -2,7 +2,15 @@
 
 import React from 'react';
 import classnames from 'classnames';
-import { Grid, Heading, Spinner, Icon, Button, Paragraph } from 'ui.rhamb.io';
+import {
+  Grid,
+  Heading,
+  Container,
+  Spinner,
+  Icon,
+  Button,
+  Paragraph,
+} from 'ui.rhamb.io';
 import { SomethingWrong } from '~/components/composite/something-wrong';
 import { ShadowButton } from '~/components/wrappers/shadow-button';
 import { Collection } from '~/components/entities/collection';
@@ -67,14 +75,16 @@ export const SlideCollectionsRaw = (props: Props) => {
           <div className={classes.image}>
             <img src={require('./assets/guys.svg')} width="100%" />
           </div>
-          <Heading className={classes.title} as="h1" size="h1">
-            Find your path
-          </Heading>
-          <Paragraph light primary className={classes.annotation}>
-            Still don’t know your favorite tools for best developer experience?
-            Explore community recommended personal paths for every kind of
-            Javascript developer.
-          </Paragraph>
+          <Container text>
+            <Heading className={classes.title} as="h1" size="h1">
+              Learn in complex
+            </Heading>
+            <Paragraph light primary className={classes.annotation}>
+              Still don’t know your favorite tools for best developer
+              experience? Explore community recommended personal paths for every
+              kind of Javascript developer.
+            </Paragraph>
+          </Container>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>

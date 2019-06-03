@@ -32,6 +32,9 @@ export const styles = (theme) => ({
     borderRadius: '27px',
     fontSize: '0.83rem',
   },
+  content: {
+    marginLeft: '0',
+  },
   icon: {
     marginRight: '1rem',
   },

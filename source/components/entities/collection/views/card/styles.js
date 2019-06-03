@@ -18,6 +18,9 @@ export const styles = (theme) => ({
       textAlign: 'left',
     },
   },
+  annotation: {
+    fontSize: '1rem',
+  },
   row: {
     marginBottom: '0',
   },
