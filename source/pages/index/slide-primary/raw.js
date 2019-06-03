@@ -1,10 +1,11 @@
 // @flow
 
 import React from 'react';
+import { ShadowButton } from '~/components/wrappers/shadow-button';
 
 import {
+  Text,
   Icon,
-  Button,
   Heading,
   Grid,
   HorizontalMenu,
@@ -57,19 +58,29 @@ export const SlidePrimaryRaw = (props: Props) => {
               Compose your skills like never before. Join us now.
             </Paragraph>
             <HorizontalMenu className={classes.actions}>
-              <Button
+              <ShadowButton
                 arrowed
                 icon={<Icon size={16} icon="Video" />}
                 className={classes.button}
               >
                 Watch video
-              </Button>
-              <Button arrowed accent className={classes.button}>
+              </ShadowButton>
+              <ShadowButton arrowed accent className={classes.button}>
                 Sign up
-              </Button>
+              </ShadowButton>
             </HorizontalMenu>
           </Grid.Column>
         </Grid.Row>
+        <div className={classes.footer}>
+          <Text className={classes['scroll-down']}>
+            <Icon
+              icon="ArrowDown"
+              size={18}
+              className={classes['scroll-down-icon']}
+            />
+            Scroll down
+          </Text>
+        </div>
       </Grid>
     </div>
   );

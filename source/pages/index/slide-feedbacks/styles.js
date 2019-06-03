@@ -1,3 +1,5 @@
+import chroma from 'chroma-js';
+
 export const styles = (theme) => ({
   head: {
     marginBottom: '2rem',
@@ -18,5 +20,10 @@ export const styles = (theme) => ({
   },
   bottom: {
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.jc_c],
+  },
+  button: {
+    background: `rgba(${chroma(theme.colors.basic)
+      .alpha(0.1)
+      .rgba()})`,
   },
 });

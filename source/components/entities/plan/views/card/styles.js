@@ -21,9 +21,6 @@ export const styles = (theme) => ({
   header: {
     textAlign: 'center',
   },
-  'header-annotation': {
-    opacity: '0.5',
-  },
   price: {
     marginTop: '1rem',
     textAlign: 'center',

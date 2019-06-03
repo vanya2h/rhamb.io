@@ -4,12 +4,6 @@ export const styles = {
     marginBottom: '3rem',
   },
   illustration: {
-    maxHeight: '500px',
-  },
-  footer: {
-    textAlign: 'center',
-    '& h1': {
-      margin: 'auto',
-    },
+    maxHeight: '400px',
   },
 };

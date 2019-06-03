@@ -12,6 +12,6 @@ export const styles = () => ({
     paddingRight: '2rem',
   },
   language: {
-    marginTop: '1.5rem',
+    marginTop: '1rem',
   },
 });

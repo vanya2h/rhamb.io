@@ -24,9 +24,7 @@ export const PlanCardViewRaw = (props: Props) => {
         <Heading as="h4" size="h4">
           {planData.title}
         </Heading>
-        <Paragraph className={classes['header-annotation']}>
-          {planData.annotation}
-        </Paragraph>
+        <Paragraph light>{planData.annotation}</Paragraph>
       </div>
       <div className={classes.price}>
         <Heading mega as="h3" size="h3">
@@ -40,7 +38,7 @@ export const PlanCardViewRaw = (props: Props) => {
         {planData.attributes.map((attribute, index) => (
           <div key={index} className={classes['attributes-item']}>
             <Icon className={classes['attributes-icon']} icon="Plus" />
-            <Text>{attribute}</Text>
+            <Text light>{attribute}</Text>
           </div>
         ))}
       </div>

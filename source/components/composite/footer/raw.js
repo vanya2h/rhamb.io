@@ -131,7 +131,10 @@ export const FooterRaw = (props: Props) => {
               },
             }}
           >
-            <Paragraph light primary className={classes.subtitle}>
+            <Heading className={classes.heading} as="h5" size="h5">
+              Rhamb.io
+            </Heading>
+            <Paragraph light className={classes.subtitle}>
               Explore Javascript on your pace with ease
             </Paragraph>
             <div className={classes.language}>

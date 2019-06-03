@@ -3,11 +3,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { SomethingWrong } from '~/components/composite/something-wrong';
-// import { List } from '~/domains/abstractions/list/constructor';
-// import { Slider } from '~/components/composite/slider';
-
 import { Button, Spinner, Grid, Heading, Icon, Paragraph } from 'ui.rhamb.io';
-
 import { Plan } from '~/components/entities/plan';
 
 import type { JSSObject } from '~/domains/app/jss/types';
@@ -101,12 +97,6 @@ export const SlidePlansRaw = (props: Props) => {
           />
         </Grid.Column>
       </Grid.Row>
-      <div className={classes.footer}>
-        <Heading as="h1" size="h1" mega>
-          Become a true Javascript-ninja
-        </Heading>
-        <Paragraph primary>With Rhamb.io</Paragraph>
-      </div>
     </div>
   );
 };

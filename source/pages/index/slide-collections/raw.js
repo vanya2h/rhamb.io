@@ -4,6 +4,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Grid, Heading, Spinner, Icon, Button, Paragraph } from 'ui.rhamb.io';
 import { SomethingWrong } from '~/components/composite/something-wrong';
+import { ShadowButton } from '~/components/wrappers/shadow-button';
 import { Collection } from '~/components/entities/collection';
 
 import type { JSSObject } from '~/domains/app/jss/types';
@@ -69,7 +70,7 @@ export const SlideCollectionsRaw = (props: Props) => {
           <Heading className={classes.title} as="h1" size="h1">
             Find your path
           </Heading>
-          <Paragraph primary className={classes.annotation}>
+          <Paragraph light primary className={classes.annotation}>
             Still don’t know your favorite tools for best developer experience?
             Explore community recommended personal paths for every kind of
             Javascript developer.
@@ -93,6 +94,15 @@ export const SlideCollectionsRaw = (props: Props) => {
           </Grid.Column>
         ))}
       </Grid.Row>
+      <div className={classes['button-wrapper']}>
+        <ShadowButton
+          className={classes.button}
+          arrowed
+          icon={<Icon size={16} icon="Compass" />}
+        >
+          Explore more
+        </ShadowButton>
+      </div>
     </Grid>
   );
 };

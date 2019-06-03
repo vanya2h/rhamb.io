@@ -13,4 +13,7 @@ export const styles = (theme) => ({
   annotation: {
     marginTop: '1rem',
   },
+  ['button-wrapper']: {
+    extend: [theme.utils.flexbox.col, theme.utils.flexbox.ai_c],
+  },
 });

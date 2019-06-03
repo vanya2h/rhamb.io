@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { SomethingWrong } from '~/components/composite/something-wrong';
 import { List } from '~/domains/abstractions/list/constructor';
 import { Slider } from '~/components/composite/slider';
+import { ShadowButton } from '~/components/wrappers/shadow-button';
 
 import {
   Button,
@@ -62,9 +63,9 @@ export const SlideTopToolsRaw = (props: Props) => {
     <div className={classes.root}>
       <div className={classes.head}>
         <Heading className={classes.title} size="h3" as="h3">
-          Guides on all major Javascript tools
+          {"Master's toolsbelt"}
         </Heading>
-        <Paragraph primary>
+        <Paragraph primary light>
           Learn wide Javascript ecosystem just in one place
         </Paragraph>
       </div>
@@ -110,14 +111,14 @@ export const SlideTopToolsRaw = (props: Props) => {
         </Slider>
       </div>
       <div className={classes.bottom}>
-        <Paragraph primary>
+        <Paragraph primary light>
           The only fastest way to learn most popular modern tools. All guides
           community-driven and open sourced. Try it for free
         </Paragraph>
         <HorizontalMenu className={classes.buttons}>
-          <Button icon={<Icon icon="Coffee" size={17} />}>
+          <ShadowButton icon={<Icon icon="Coffee" size={17} />}>
             Start for free
-          </Button>
+          </ShadowButton>
           <Button transparent icon={<Icon icon="Clipboard" size={17} />}>
             Or see our prices
           </Button>

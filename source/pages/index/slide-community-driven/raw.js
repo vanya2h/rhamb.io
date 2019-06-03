@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { ShadowButton } from '~/components/wrappers/shadow-button';
 import { Heading, Icon, Paragraph, Grid } from 'ui.rhamb.io';
 
 import type { JSSObject } from '~/domains/app/jss/types';
@@ -30,66 +31,22 @@ export const SlideCommunityDrivenRaw = (props: Props) => {
           <Heading as="h2" size="h2">
             We are community-driven
           </Heading>
-          <Paragraph primary>
+          <Paragraph primary light>
             Really simple steps to make a contribution
           </Paragraph>
-          <Grid.Row className={classes.steps}>
-            <Grid.Column
-              options={{
-                handy: {
-                  width: 12,
-                },
-                mobile: {
-                  width: 6,
-                },
-                tablet: {
-                  width: 4,
-                },
-              }}
-            >
-              <div className={classes.step}>
-                <Icon className={classes.icon} icon="MessageCircle" size={18} />
-                Write drafts
-              </div>
-            </Grid.Column>
-            <Grid.Column
-              options={{
-                handy: {
-                  width: 12,
-                },
-                mobile: {
-                  width: 6,
-                },
-                tablet: {
-                  width: 4,
-                },
-              }}
-            >
-              <div className={classes.step}>
-                <Icon className={classes.icon} icon="UploadCloud" size={18} />
-                Push changes
-              </div>
-            </Grid.Column>
-            <Grid.Column
-              options={{
-                handy: {
-                  width: 12,
-                },
-                tablet: {
-                  width: 4,
-                },
-              }}
-            >
-              <div className={classes.step}>
-                <Icon className={classes.icon} icon="ThumbsUp" size={18} />
-                Be contributor
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-          <Paragraph className={classes.description} primary>
+
+          <Paragraph light className={classes.description} primary>
             All our guides is provided by our community. Everybody can make a
-            contribution to our open source education project - rhamb.io
+            contribution. Give some weight to your name with your first
+            contribution
           </Paragraph>
+          <ShadowButton
+            arrowed
+            icon={<Icon size={16} icon="Codepen" />}
+            className={classes.button}
+          >
+            Become a contributor now
+          </ShadowButton>
         </div>
       </Grid.Column>
       <Grid.Column

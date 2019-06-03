@@ -14,6 +14,11 @@ export const styles = (theme) => ({
       boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.06)',
     },
   },
+  annotation: {
+    opacity: '0.7',
+    marginTop: '0.5rem',
+    fontSize: '1rem',
+  },
   img: {
     marginBottom: '1rem',
     width: '50px',
@@ -31,7 +36,6 @@ export const styles = (theme) => ({
     extend: [theme.utils.flexbox.row, theme.utils.flexbox.ai_c],
   },
   icon: {
-    color: theme.colors.accent,
     marginRight: '5px',
   },
   category: {

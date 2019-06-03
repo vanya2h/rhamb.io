@@ -1,3 +1,5 @@
+import chroma from 'chroma-js';
+
 export const styles = (theme) => ({
   root: {
     textAlign: 'center',
@@ -7,10 +9,11 @@ export const styles = (theme) => ({
     },
   },
   description: {
-    marginTop: '0.5rem',
+    marginTop: '1.5rem',
   },
   steps: {
     marginTop: '2rem',
+    maxWidth: '600px',
   },
   step: {
     extend: [
@@ -21,12 +24,13 @@ export const styles = (theme) => ({
     marginRight: '1.5rem',
     border: '1px solid #eee',
     background: '#eee',
-    color: theme.colors.contrast_maximum,
+    color: `rgba(${chroma(theme.colors.contrast_maximum)
+      .alpha(0.5)
+      .rgba()})`,
     padding: '0.5rem 1rem',
     width: '100%',
     borderRadius: '27px',
     fontSize: '0.83rem',
-    fontWeight: 'bold',
   },
   icon: {
     marginRight: '1rem',

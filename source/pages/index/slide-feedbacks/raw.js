@@ -88,8 +88,17 @@ export const SlideFeedbacksRaw = (props: Props) => {
         ))}
       </Grid.Row>
       <HorizontalMenu className={classes.bottom}>
-        <Button icon={<Icon icon="Smile" size={16} />} arrowed>
+        <Button
+          className={classes.button}
+          icon={<Icon icon="Smile" size={16} />}
+        >
           View all opinions
+        </Button>
+        <Button
+          className={classes.button}
+          icon={<Icon icon="Edit2" size={16} />}
+        >
+          Write own
         </Button>
       </HorizontalMenu>
     </div>

@@ -32,7 +32,7 @@ export const ToolCardViewRaw = (props: Props) => {
       >
         {toolData.title}
       </Heading>
-      <Paragraph>
+      <Paragraph className={classes.annotation}>
         <Truncate lines={2}>{toolData.annotation}</Truncate>
       </Paragraph>
       <div className={classes.bottom}>

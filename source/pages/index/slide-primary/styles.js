@@ -25,4 +25,27 @@ export const styles = (theme) => ({
   button: {
     marginTop: '2rem',
   },
+  footer: {
+    display: 'flex',
+    extend: [theme.utils.flexbox.jc_c],
+  },
+  'scroll-down': {
+    margin: 'auto',
+    opacity: '0.4',
+  },
+  'scroll-down-icon': {
+    marginRight: '1rem',
+    animation: '1.5s ease-in-out infinite top-bottom',
+  },
+  '@keyframes top-bottom': {
+    '0%': {
+      transform: 'translateY(-5px)',
+    },
+    '50%': {
+      transform: 'translateY(5px)',
+    },
+    '100%': {
+      transform: 'translateY(-5px)',
+    },
+  },
 });

@@ -102,7 +102,7 @@ export const CollectionCardViewRaw = (props: Props) => {
                 {collectionData.title}
               </Link>
             </Heading>
-            <Paragraph>
+            <Paragraph light>
               <Truncate lines={2}>{collectionData.annotation}</Truncate>
             </Paragraph>
             <Button className={classes.button} transparent arrowed>
