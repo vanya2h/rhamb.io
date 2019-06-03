@@ -97,7 +97,7 @@ export const CollectionCardViewRaw = (props: Props) => {
             />
           </HorizontalMenu>
           <div className={classes.content}>
-            <Heading className={classes.title} as="h2" size="h6">
+            <Heading mega className={classes.title} as="h2" size="h5">
               <Link className={classes['title-link']}>
                 {collectionData.title}
               </Link>

@@ -28,6 +28,7 @@ export const ToolCardViewRaw = (props: Props) => {
           routerService.pushHistory('/#');
         }}
         size="h5"
+        mega
         as="h3"
       >
         {toolData.title}

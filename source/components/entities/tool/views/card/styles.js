@@ -3,12 +3,13 @@ import chroma from 'chroma-js';
 export const styles = (theme) => ({
   root: {
     textAlign: 'left',
+    position: 'relative',
     background: theme.colors.contrast_maximum,
     color: theme.colors.basic,
     borderRadius: '17px',
     transition: '.2s all ease-in-out',
-    boxShadow: `0 10px 15px rgba(${chroma(theme.colors.contrast)
-      .alpha(0.2)
+    boxShadow: `0 10px 20px rgba(${chroma(theme.colors.contrast)
+      .alpha(0.3)
       .rgba()})`,
     padding: '1.2rem',
     '&:hover': {

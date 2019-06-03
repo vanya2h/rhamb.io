@@ -24,6 +24,7 @@ export const styles = (theme) => ({
   price: {
     marginTop: '1rem',
     textAlign: 'center',
+    textTransform: 'lowercase',
     '& span + span': {
       marginLeft: '0.5rem',
     },

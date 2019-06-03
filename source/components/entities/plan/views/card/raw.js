@@ -21,10 +21,12 @@ export const PlanCardViewRaw = (props: Props) => {
   return (
     <div className={classes.root}>
       <div className={classes.header}>
-        <Heading as="h4" size="h4">
+        <Heading mega as="h3" size="h3">
           {planData.title}
         </Heading>
-        <Paragraph light>{planData.annotation}</Paragraph>
+        <Paragraph className={classes.annotation} light>
+          {planData.annotation}
+        </Paragraph>
       </div>
       <div className={classes.price}>
         <Heading mega as="h3" size="h3">
@@ -38,7 +40,7 @@ export const PlanCardViewRaw = (props: Props) => {
         {planData.attributes.map((attribute, index) => (
           <div key={index} className={classes['attributes-item']}>
             <Icon className={classes['attributes-icon']} icon="Plus" />
-            <Text light>{attribute}</Text>
+            <Text>{attribute}</Text>
           </div>
         ))}
       </div>
